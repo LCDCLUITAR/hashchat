@@ -1,25 +1,30 @@
-<ion-modal-view>
-  <ion-header-bar>
-    <h1 class="title">Login</h1>
-    <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+<ion-view>
+    <ion-content>
+        <div id="wrapper">
+            <div class="topBox">
+                <div class="container">
+                    <div class="logo">
+                        <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150"/>
+                    </div>           
+                    <div class="search-bar">
+                        <input type="search" name="keywords" placeholder="#Search..." autocomplete="false"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <div id="wrapper">
+        <div class="bottomBox">
+            <div class="bottomBox-topBox">
+                <a href="login/login"><button name="login" class="login col-xs-6 btn btn-success btn-lg">Login</button></a>
+                <a href="app/home"><button name="guest" class="guest col-xs-6 btn btn-info btn-lg">Guest</button></a>
+                <div class="clearfix"></div>
+            </div>
+            <div class="bottomBox-bottomBox">
+                <a href="login/login"><button name="register" class="register btn btn-danger btn-lg">Register!</button></a>
+                <div class="clearfix"></div>
+            </div>            
+        </div>
     </div>
-  </ion-header-bar>
-  <ion-content>
-    <form ng-submit="doLogin()">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="loginData.username">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
-        </label>
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Log in</button>
-        </label>
-      </div>
-    </form>
-  </ion-content>
-</ion-modal-view>
+</ion-view>
+
