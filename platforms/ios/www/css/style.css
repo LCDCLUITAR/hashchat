@@ -12,7 +12,7 @@ body #wrapper{
     height: 100%;
     color: #000;
     font-family: sans-serif, serif;
-    background-color: aliceblue;
+    background-color: #000;
     overflow: hidden;
 }
 
@@ -33,7 +33,7 @@ body #wrapper{
 .topBox .logo img{
     text-align: center;
     display: block;
-    height: 9em;
+    height: 8em;
     margin: 0 auto;
 }
 
@@ -51,7 +51,27 @@ body #wrapper{
 }
 
 .bottomBox{
+    margin: 0;
+    padding: 0;
+    /*border: 2px solid red;*/
+    width: 100%;
     position: fixed;
     bottom: 0;
     left: 0;
+}
+.bottomBox-topBox{
+    /*border: 2px solid blue;*/
+}
+
+.login, .register, .guest{
+    height: 2.5em;
+    border-radius: 0;
+}
+
+.bottomBox-bottomBox{
+    /*border: 2px solid green;    */
+}
+
+.register{
+    width: 100%;
 }
