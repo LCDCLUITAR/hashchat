@@ -79,3 +79,85 @@ body #wrapper{
 /*-----------------------------
 --- Login Page
 ------------------------------*/
+.login-form{
+    margin-top: 35px;
+}
+
+.input-box{
+    padding: 8px;
+    background-color: #A0A0A0;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.input-box::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: aliceblue;
+    padding-left: 10px;
+}
+.input-box::-moz-placeholder { /* Firefox 19+ */
+  color: aliceblue;
+    padding-left: 10px;
+}
+.input-box::-ms-input-placeholder { /* IE 10+ */
+  color: aliceblue;
+    padding-left: 10px;
+}
+.input-box::-moz-placeholder { /* Firefox 18- */
+  color: aliceblue;
+    padding-left: 10px;
+}
+
+.submitLogin{
+    text-align: center;
+    display: block;
+    padding: 8px;
+    background-color: #A0A0A0;
+    width: 70%;
+    margin: 0 auto;    
+}
+
+.forgotPass{
+    color: aliceblue;
+    text-align: right;
+    margin-top: 10px;
+    display: block;
+    width: 70%;
+    margin-left: 15%;
+    font-size: 0.9em;
+}
+
+.hr-text {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+.hr-text > span {
+    position: relative;
+    display: inline-block;
+    color: aliceblue;
+}
+
+.hr-text > span:before,
+.hr-text > span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    height: 1px;
+    background: green;
+}
+
+.hr-text > span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.hr-text > span:after {
+    left: 100%;
+    margin-left: 15px;
+}
+
