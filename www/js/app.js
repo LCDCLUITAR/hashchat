@@ -24,6 +24,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
 .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
+        .state('default', {
+            url: '/default',
+            abstract: false,
+            templateUrl: 'templates/default.html'
+        })
         .state('login', {
             url: '/login',
             abstract: false,
@@ -44,5 +49,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
             }
         });
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/default');
 });

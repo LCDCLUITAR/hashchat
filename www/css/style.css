@@ -1,5 +1,5 @@
 /*-----------------------------
---- Login Page
+--- Default Page
 ------------------------------*/
 .scroll-bar-indicator{
 	display: none;
@@ -75,3 +75,7 @@ body #wrapper{
 .register{
     width: 100%;
 }
+
+/*-----------------------------
+--- Login Page
+------------------------------*/
