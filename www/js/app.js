@@ -52,6 +52,14 @@ angular.module('starter', ['ionic', 'starter.controllers'])
                     templateUrl: 'templates/home.html'
                 }
             }
+        })
+        .state('app.chat-room', {
+            url: '/chat-room',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/chat-room.html'
+                }
+            }
         });
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/default');

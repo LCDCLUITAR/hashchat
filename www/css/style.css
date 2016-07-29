@@ -201,3 +201,77 @@ body #wrapper{
     background-size: cover !important;
     height: 10em;
 }
+
+/*-----------------------------
+--- Chat-room Page
+------------------------------*/
+.msg-box{
+    background-color: aliceblue;
+    height: 44.5em;
+}
+
+.messages{
+    /*border: 2px solid red;*/
+    height: 90%;
+}
+
+.keyboard{
+    border: 2px solid #000;
+    border-radius: 0.6em;
+    height: 6%;
+    margin: 3% 2%;
+}
+
+.keyboard input{
+    border-radius: 0.6em;
+    width: 100%;
+}
+
+.keyboard input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    padding-left: 10px;
+}
+.keyboard input::-moz-placeholder { /* Firefox 19+ */
+    padding-left: 10px;
+}
+.keyboard input::-ms-input-placeholder { /* IE 10+ */
+    padding-left: 10px;
+}
+.keyboard input::-moz-placeholder { /* Firefox 18- */
+    padding-left: 10px;
+}
+
+.msg{
+    padding: 5px;
+    min-height: 4em;
+    font-size: 0.8em;
+}
+
+.user-pic{
+    background: url('../img/testPic.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #000;
+    height: 55px;
+    text-align: center;
+    background-color: #D0D0D0;
+}
+
+.user-pic span{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    margin-top: 50%;
+    font-size: 2em;
+}
+
+.chat{
+    font-size: 1.5em ;
+    padding-left: 15px;
+}
+
+.bar .title.title-left {
+    text-align: center;
+}
