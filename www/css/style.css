@@ -13,7 +13,7 @@ body #wrapper{
     color: #000;
     font-family: sans-serif, serif;
     background-color: #000;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .topBox{
@@ -166,3 +166,38 @@ body #wrapper{
     margin: 0 auto;
 }
 
+/*-----------------------------
+--- Home Page
+------------------------------*/
+.fa-cog{
+    margin-top: 5px;
+    font-size: 2em !important;
+    width: 100%;
+}
+
+.bottomBox-chat{
+    /*border: 2px solid blue;*/
+    position: relative;
+    height: 100%;
+}
+
+.chat-box{
+    /*border: 2px solid yellow;*/
+    min-height: 10em;
+    padding: 0;
+    margin: 0;
+}
+
+.chat-name{
+    color: #000;
+    background-color: aliceblue;
+    border-right: 1px solid #000;
+    text-align: center;
+}
+
+.chat-photo{
+    background: url('http://cravecookclick.com/wp-content/uploads/2013/02/bf.png') no-repeat;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    height: 10em;
+}

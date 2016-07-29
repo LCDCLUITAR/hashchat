@@ -1,5 +1,23 @@
 <ion-view>
-	<ion-content>
-    	<h1>Home</h1>
+    <ion-content style="background-color:#000;">
+        <div id="wrapper">
+            <div class="topBox">
+                <div class="container"> 
+                    <div class="logo">
+                        <img src="img/hashchat-logo.png"/>
+                    </div>         
+                    <div class="search-bar">
+                        <input type="search" name="keywords" placeholder="#Search..." autocomplete="false"/>
+                    </div>
+                </div>
+            </div>
+            <div class="bottomBox-chat">
+                <div class="col-xs-6 chat-box" ng-repeat="box in tempTrending">
+                    <div class="chat-name">{{box.name}}</div>
+                    <div class="chat-photo" style="background: url('{{box.photo}}');"></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
 	</ion-content>
 </ion-view>
