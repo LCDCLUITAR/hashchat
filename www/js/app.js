@@ -34,6 +34,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
             abstract: false,
             templateUrl: 'templates/login.html'
         })
+        .state('register', {
+            url: '/register',
+            abstract: false,
+            templateUrl: 'templates/register.html'
+        })
         .state('app', {
             url: '/app',
             abstract: true,
