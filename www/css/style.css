@@ -161,3 +161,8 @@ body #wrapper{
     margin-left: 15px;
 }
 
+.btn-block{
+    width: 80%;
+    margin: 0 auto;
+}
+
