@@ -1,5 +1,5 @@
 <ion-view>
-    <ion-content style="background-color:#000;">
+    <ion-content>
         <div id="wrapper">
             <div class="topBox">
                 <div class="container">
@@ -10,18 +10,18 @@
             </div>
             <form class="login-form container">
                 <div class="form-group">
-                    <input type="email" class="input-box form-control" placeholder="Enter email">
+                    <input type="email" class="input-box form-control" placeholder="Enter email" ng-model="email">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="input-box form-control" placeholder="Password">
+                    <input type="password" class="input-box form-control" placeholder="Password" ng-model="pass">
                 </div>
-                <button class="submitLogin btn btn-primary btn-lg active">Log In</button>
+                <button class="submitLogin btn btn-primary btn-lg active" ng-click="Login(email,pass)">Log In</button>
                 <a href="#/pass-recover"><strong class="forgotPass">Forgot your password?</strong></a>
-                <div class="hr-text">
+                <!--iv class="hr-text">
                     <span>Or</span>
                 </div>
                 <a class="btn btn-block btn-social btn-facebook"><span class="fa fa-facebook"></span> Sign in with Facebook</a>
-                <a class="btn btn-block btn-social btn-google"><span class="fa fa-google"></span> Sign in with Google</a>
+                <a class="btn btn-block btn-social btn-google"><span class="fa fa-google"></span> Sign in with Google</a-->
             </form>
             <a href="#/register"><div class="forgotPass" style="width:70%;">Don't have an account? Sign Up!</div></a>
         </div>

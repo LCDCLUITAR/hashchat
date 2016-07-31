@@ -8,6 +8,8 @@ angular.module('starter.controllers', [])
         console.log($scope.rooms);
     });
 
+    $scope.user = $scope.fbApp.auth().currentUser;
+    console.log($scope.user);
 
 
 })
@@ -28,5 +30,19 @@ angular.module('starter.controllers', [])
             window.location.replace('#/login');
         }
     }
+
+})
+.controller('Login', function($scope, $ionicModal, $timeout) {
+    console.log('Login');
+    $scope.fbApp = fbApp;
+    
+    $scope.Login = function(email, pass){
+        $scope.fbApp.auth().signInWithEmailAndPassword(email, pass).catch(function(error){
+            alert(error.code + " - " + error.message);
+        });
+        $scope.user = $scope.fbApp.auth().currentUser;
+        window.location.replace('#/app/home');
+    }
+
 
 })

@@ -1,11 +1,13 @@
 <ion-view>
-    <ion-content style="background-color:#000;">
+    <ion-content>
+        <div class="backgroundImg"></div>
         <div id="wrapper">
             <div class="topBox">
                 <div class="container"> 
                     <div class="logo">
                         <img src="img/hashchat-logo.png"/>
-                    </div>         
+                    </div>     
+                    <label>Welcome {{user.email}}</label>    
                     <div class="search-bar">
                         <input type="search" name="keywords" placeholder="#Search..." autocomplete="false"/>
                     </div>
