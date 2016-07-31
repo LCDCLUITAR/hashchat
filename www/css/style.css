@@ -77,6 +77,17 @@ body #wrapper{
     background-color:rgba(0,0,0, 0.7);
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+.form-group input{
+    color:#EEEEEE;
+    width: 100%;
+    padding: 8px;
+    height: 3.5em;
+    border-radius: 0.9em;
+    border-width: 3px;
+    border: 2px solid #002966; 
+    background-color:rgba(0,0,0, 0.7);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
 .search-bar  input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #EEEEEE;
 }

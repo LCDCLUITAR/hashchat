@@ -37,7 +37,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         .state('register', {
             url: '/register',
             abstract: false,
-            templateUrl: 'templates/register.html'
+            templateUrl: 'templates/register.html',
+            controller:'Register'
         })
         .state('app', {
             url: '/app',

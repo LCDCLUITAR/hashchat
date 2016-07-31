@@ -8,4 +8,25 @@ angular.module('starter.controllers', [])
         console.log($scope.rooms);
     });
 
-});
+
+
+})
+.controller('Register', function($scope, $ionicModal, $timeout) {
+    console.log('Register');
+    $scope.fbApp = fbApp;
+    
+
+    $scope.createUser = function(email, pass, conPass){
+
+        if (pass != conPass){
+            alert("Passwords don't match!");
+        }
+        else{
+            $scope.fbApp.auth().createUserWithEmailAndPassword(email, pass).catch(function(error){
+                alert(error.code + " - " + error.message);
+            });
+            window.location.replace('#/login');
+        }
+    }
+
+})
