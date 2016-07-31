@@ -23,12 +23,12 @@ body #wrapper{
     height: 100%;
 
     display: block;
-    background: url('../img/bkgrnd.jpg');
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
+    background: url('../img/bkgrnd1.jpg');
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
     /*overflow: hidden;*/
 }
 .content{
