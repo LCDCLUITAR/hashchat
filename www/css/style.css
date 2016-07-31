@@ -12,8 +12,35 @@ body #wrapper{
     height: 100%;
     color: #000;
     font-family: sans-serif, serif;
-    background-color: #000;
+
+}
+.backgroundImg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -100;
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    background: url('../img/bkgrnd.jpg');
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
     /*overflow: hidden;*/
+}
+.content{
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+}
+.pane, .view{
+    background-color: rgba(0,0,0, 0.0);
 }
 
 .topBox{
@@ -28,7 +55,6 @@ body #wrapper{
     position: relative;
     width: 100%;
     height: 9.4em;
-    position: relative;  
 }
 .topBox .logo img{
     text-align: center;
@@ -37,17 +63,31 @@ body #wrapper{
     margin: 0 auto;
 }
 
-.search-bar{
-    border: 2px solid #000;    
+.search-bar{ 
 }
 
 .search-bar input{
+    color:#EEEEEE;
     width: 100%;
     padding: 8px;
+    height: 3.5em;
+    border-radius: 0.9em;
+    border-width: 3px;
+    border: 2px solid #002966; 
+    background-color:rgba(0,0,0, 0.7);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
-
-.search-bar, .search-bar input{
-    border-radius: 0.6em;
+.search-bar  input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #EEEEEE;
+}
+.search-bar  input::-moz-placeholder { /* Firefox 19+ */
+    color: #EEEEEE;
+}
+.search-bar  input::-ms-input-placeholder { /* IE 10+ */
+    color: #EEEEEE;
+}
+.search-bar  input::-moz-placeholder { /* Firefox 18- */
+    color: #EEEEEE;
 }
 
 .bottomBox{
@@ -64,8 +104,11 @@ body #wrapper{
 }
 
 .login, .register, .guest{
-    height: 2.5em;
-    border-radius: 0;
+    height: 3.5em;
+    border-radius: 0.9em;
+    border-width: 3px;
+    background-color:rgba(0,0,0, 0.6);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .bottomBox-bottomBox{
