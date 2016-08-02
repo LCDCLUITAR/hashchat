@@ -16,7 +16,7 @@
         </ion-header-bar>
         <ion-content>
             <ion-list>
-                <ion-item menu-close href="#/login">
+                <ion-item menu-close href="#/login" ng-if="!logged">
                     Login
                 </ion-item>
                 <ion-item menu-close href="#/app/search">
@@ -28,7 +28,7 @@
                 <ion-item menu-close href="#/app/search">
                     Create Chat Room
                 </ion-item>
-                <ion-item menu-close href="#/app/search">
+                <ion-item menu-close href="#/app/search" ng-if="logged" ng-click="logout()">
                     Logout
                 </ion-item>
             </ion-list>

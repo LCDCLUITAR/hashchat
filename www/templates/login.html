@@ -9,6 +9,10 @@
                 </div>
             </div>
             <form class="login-form container">
+                <div ng-if="logErr" class="alert alert-danger" style="margin-top: -40px; padding: 0.5em; text-align: center; cursor: pointer;" onclick="$('.alert).hide()">
+                    <!--<a href="#" class="close" data-dismiss="alert">&times;</a>-->
+                    <strong>Error!</strong>&nbsp;{{logErr}}
+                </div>
                 <div class="form-group">
                     <input type="email" class="input-box form-control" placeholder="Enter email" ng-model="email">
                 </div>
