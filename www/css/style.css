@@ -258,27 +258,32 @@ html, body, #wrapper{
     height: 6em;
     background-color: #F0F0F0;
     cursor: pointer;
+    position: relative;
 }
 
 .chat-box .chat-photo{
     display: block;
-    float: left;
-    width: 40%;
-    position: absolute;
+    border-radius: 0;
     height: 100%;
-    background: url('../img/ionic.png') no-repeat;
-    background-size: contain;
+    background-repeat: no-repeat !important;
+    background-size: 121px 80px !important;
 }
 
 .chat-box .chat-name {
-    float: right;
-    left: 25px;
+    background-color: #4988c0  !Important;
+    color: aliceblue;
     display: block;
-    height: 100%;
-    padding: 30px;
     text-align: left;
-    font-size: 2em;
-    background-color: #A0A0A0;
+    font-size: 1.3em;
+}
+
+.last-msg {
+    /* border: 2px solid green; */
+    position: absolute;
+    margin-left: 35%;
+    margin-top: 5%;
+    padding: 5px;
+    font-size: 0.8em;
 }
 
 .green-box{
@@ -373,7 +378,8 @@ input[type="text"]:focus,input:active, input[type="password"]:focus,input:active
         100% {-webkit-box-shadow: 0 0 20px rgba(129,183,26,0);}
 }
 /*  Top Nav Bar  */
-[nav-bar-transition="ios"] [nav-bar="active"] .bar, [nav-bar-transition="ios"] [nav-bar="entering"] .bar {
+[nav-bar-transition="ios"] [nav-bar="active"] .bar, [nav-bar-transition="ios"] [nav-bar="entering"] .bar,
+[nav-bar-transition="android"] [nav-bar="active"] .bar, [nav-bar-transition="android"] [nav-bar="entering"] .bar {
     background: rgb(5, 72, 5);
     color: aliceblue;
     border: none;
