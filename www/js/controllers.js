@@ -1,6 +1,10 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, userSession) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, userSession, general) {
+    // Redirect function
+    $scope.redirect = function(path){
+        general.redirect(path);
+    }
     /*=========================================================
     *** Controller to check for login status and redirect
     *** if necessary. Status will be stored in factory
@@ -86,7 +90,12 @@ angular.module('starter.controllers', [])
     }
 
 })
-.controller('Login', function($scope, $ionicModal, $timeout, userSession) {
+.controller('Login', function($scope, $ionicModal, $timeout, userSession, general) {
+    // Redirect function
+    $scope.redirect = function(path){
+        general.redirect(path);
+    }
+    
     console.log('Login');
     $scope.fbApp = fbApp;
     

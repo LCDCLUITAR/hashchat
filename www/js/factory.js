@@ -1,5 +1,11 @@
 angular.module('starter.factory', [])
-
+.factory("general", function(){
+    return{
+        redirect: function(path){
+            window.location.replace(path);
+        }
+    }
+})
 .factory("userSession", function() {
     var logged = false;
     var currUser = {};

@@ -1,18 +1,22 @@
 /*-----------------------------
 --- Default Page
 ------------------------------*/
+[nav-view-transition="ios"][nav-view-direction="forward"], [nav-view-transition="ios"][nav-view-direction="back"] {
+    background-color: #f0f0f0;
+}
+
 .scroll-bar-indicator{
 	display: none;
     overflow: hidden;
 }
-body #wrapper{
+html, body, #wrapper{
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     color: #000;
     font-family: sans-serif, serif;
-
+    background-color: #F0F0F0;
 }
 .backgroundImg {
     position: absolute;
@@ -44,6 +48,7 @@ body #wrapper{
 }
 
 .topBox{
+    background-color: #054805;
     margin: 0;
     padding: 0;
     position: relative;
@@ -54,7 +59,7 @@ body #wrapper{
 .topBox .logo{
     position: relative;
     width: 100%;
-    height: 9.4em;
+    /*height: 9.4em;*/
 }
 .topBox .logo img{
     text-align: center;
@@ -63,42 +68,35 @@ body #wrapper{
     margin: 0 auto;
 }
 
-.search-bar{ 
-}
-
 .search-bar input{
-    color:#EEEEEE;
     width: 100%;
     padding: 8px;
     height: 3.5em;
     border-radius: 0.9em;
     border-width: 3px;
     border: 2px solid #002966; 
-    background-color:rgba(0,0,0, 0.7);
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    /*background-color:rgba(0,0,0, 0.7);*/
 }
 .form-group input{
-    color:#EEEEEE;
     width: 100%;
     padding: 8px;
     height: 3.5em;
     border-radius: 0.9em;
     border-width: 3px;
-    border: 2px solid #002966; 
-    background-color:rgba(0,0,0, 0.7);
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border-bottom: 2px solid #002966;
 }
 .search-bar  input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: #EEEEEE;
+    color: #000;
+    font-weight: 600;
 }
 .search-bar  input::-moz-placeholder { /* Firefox 19+ */
-    color: #EEEEEE;
+    color: #fff;
 }
 .search-bar  input::-ms-input-placeholder { /* IE 10+ */
-    color: #EEEEEE;
+    color: #fff;
 }
 .search-bar  input::-moz-placeholder { /* Firefox 18- */
-    color: #EEEEEE;
+    color: #fff;
 }
 
 .bottomBox{
@@ -110,23 +108,24 @@ body #wrapper{
     bottom: 0;
     left: 0;
 }
-.bottomBox-topBox{
-    /*border: 2px solid blue;*/
-}
 
-.login, .register, .guest{
+.login, .register/*, .guest*/{
     height: 3.5em;
-    border-radius: 0.9em;
+    /*border-radius: 0.9em;*/
+    border-radius: 0;
     border-width: 3px;
-    background-color:rgba(0,0,0, 0.6);
+    /*background-color:rgba(0,0,0, 0.6);*/
+    /*background-color: #808080;*/
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.bottomBox-bottomBox{
-    /*border: 2px solid green;    */
+.bottomBox-bottomBox, .bottomBox-topBox{
+    /*border: 2px solid green;*/
+    padding: 0;
+    margin: 0;
 }
 
-.register{
+.register, .login{
     width: 100%;
 }
 
@@ -139,45 +138,55 @@ body #wrapper{
 
 .input-box{
     padding: 8px;
-    background-color: #A0A0A0;
+    background-color: #F0F0F0;
     width: 70%;
     margin: 0 auto;
+    border: none !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid #000 !important;
 }
 
 .input-box::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: aliceblue;
-    padding-left: 10px;
+    color: #000;
 }
 .input-box::-moz-placeholder { /* Firefox 19+ */
-  color: aliceblue;
-    padding-left: 10px;
+    color: #000;
 }
 .input-box::-ms-input-placeholder { /* IE 10+ */
-  color: aliceblue;
-    padding-left: 10px;
+    color: #000;
 }
 .input-box::-moz-placeholder { /* Firefox 18- */
-  color: aliceblue;
-    padding-left: 10px;
+    color: #000;
 }
 
 .submitLogin{
     text-align: center;
     display: block;
     padding: 8px;
-    background-color: #A0A0A0;
-    width: 70%;
+    border-radius: 0;
+    width: 49%;
+    height: 2.8em;
+    background-color: forestgreen !important;
     margin: 0 auto;    
 }
 
+.submitLogin:hover{
+    background-color: green !important;
+}
+
 .forgotPass{
-    color: aliceblue;
-    text-align: right;
+    color: #000;
+    text-align: center;
     margin-top: 10px;
-    display: block;
+    display: inline-block;
     width: 70%;
     margin-left: 15%;
+    margin-top: 25px;
     font-size: 0.9em;
+}
+
+.forgotPass:hover{
+    color: blue;
 }
 
 .hr-text {
@@ -185,14 +194,14 @@ body #wrapper{
     text-align: center;
     overflow: hidden;
     white-space: nowrap;
-    margin-top: 70px;
+    margin-top: 10px;
     margin-bottom: 20px;
 }
 
 .hr-text > span {
     position: relative;
     display: inline-block;
-    color: aliceblue;
+    color: #000;
 }
 
 .hr-text > span:before,
@@ -215,9 +224,16 @@ body #wrapper{
     margin-left: 15px;
 }
 
+.login-form .hr-text{
+    margin: 50px 0;
+}
+
 .btn-block{
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
+    height: 3em;
+    text-align: center;
+    vertical-align: middle;
 }
 
 /*-----------------------------
@@ -236,24 +252,37 @@ body #wrapper{
 }
 
 .chat-box{
-    /*border: 2px solid yellow;*/
-    min-height: 10em;
+    border-bottom: 1px solid #000;
     padding: 0;
     margin: 0;
+    height: 6em;
+    background-color: #F0F0F0;
+    cursor: pointer;
 }
 
-.chat-name{
-    color: #000;
-    background-color: aliceblue;
-    border-right: 1px solid #000;
-    text-align: center;
+.chat-box .chat-photo{
+    display: block;
+    float: left;
+    width: 40%;
+    position: absolute;
+    height: 100%;
+    background: url('../img/ionic.png') no-repeat;
+    background-size: contain;
 }
 
-.chat-photo{
-    background: url('http://cravecookclick.com/wp-content/uploads/2013/02/bf.png') no-repeat;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    height: 10em;
+.chat-box .chat-name {
+    float: right;
+    left: 25px;
+    display: block;
+    height: 100%;
+    padding: 30px;
+    text-align: left;
+    font-size: 2em;
+    background-color: #A0A0A0;
+}
+
+.green-box{
+    background-color: aliceblue !important;
 }
 
 /*-----------------------------
@@ -328,4 +357,36 @@ body #wrapper{
 
 .bar .title.title-left {
     text-align: center;
+}
+/*  Input green shadow  */
+input[type="text"]:focus,input:active, input[type="password"]:focus,input:active, input[type="email"]:focus,input:active{
+    outline:0;
+    -webkit-appearance: none;
+    -moz-appearance: none; 
+    border-image:none;
+    -moz-box-shadow: 0 0 40px rgba(129,183,26,0.5);
+    box-shadow: 0 0 40px rgba(129,183,26,0.5);
+    -webkit-animation: shadow-pulse 3s infinite ease-in-out;}
+    @-webkit-keyframes shadow-pulse {
+        0% {-webkit-box-shadow: 0 0 20px rgba(129,183,26,0);}
+        50% {-webkit-box-shadow: 0 0 20px rgba(129,183,26,1);}
+        100% {-webkit-box-shadow: 0 0 20px rgba(129,183,26,0);}
+}
+/*  Top Nav Bar  */
+[nav-bar-transition="ios"] [nav-bar="active"] .bar, [nav-bar-transition="ios"] [nav-bar="entering"] .bar {
+    background: rgb(5, 72, 5);
+    color: aliceblue;
+    border: none;
+}
+
+.bar-stable .button.button-icon {
+    color: aliceblue;
+}
+
+.button .icon {
+    color: aliceblue;
+}
+
+.bar .buttons span {
+    color: aliceblue;
 }

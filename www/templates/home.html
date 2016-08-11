@@ -5,18 +5,18 @@
             <div class="topBox">
                 <div class="container"> 
                     <div class="logo">
-                        <img src="img/hashchat-logo.png"/>
+                        <img src="img/hashchat-logo.png" style="height:6em;"/>
                     </div>     
-                    <label>Welcome {{user.email}}</label>    
+                    <!--<label>Welcome {{user.email}}</label>-->
                     <div class="search-bar">
                         <input type="search" name="keywords" placeholder="#Search..." autocomplete="false"/>
                     </div>
                 </div>
             </div>
             <div class="bottomBox-chat">
-                <div class="col-xs-6 chat-box" ng-repeat="box in rooms">
-                    <div class="chat-name">{{box.name}}</div>
-                    <a href="#/app/chat-room"><div class="chat-photo" style="background: url('{{box.photo}}');"></div></a>
+                <div class="col-xs-12 chat-box" ng-repeat="box in rooms" ng-click="redirect('#/app/chat-room')">
+                    <div class="col-xs-3 chat-photo" style="background:url({{box.photo}});"></div>
+                    <div class="col-xs-8 chat-name" ng-class-even="'green-box'">{{box.name}}</div>
                 </div>
                 <div class="clearfix"></div>
             </div>

@@ -4,8 +4,11 @@
             <div class="topBox">
                 <div class="container">
                     <div class="logo">
-                        <img src="img/hashchat-logo.png"/>
-                    </div>
+                        <img src="img/hashchat-logo2.png"/>
+                    </div>           
+                    <!--<div class="search-bar">
+                        <input class="form-control" type="search" name="keywords" placeholder="#Search..." autocomplete="false"/>
+                    </div>-->
                 </div>
             </div>
             <form class="login-form container">
@@ -19,15 +22,16 @@
                 <div class="form-group">
                     <input type="password" class="input-box form-control" placeholder="Password" ng-model="pass">
                 </div>
-                <button class="submitLogin btn btn-primary btn-lg active" ng-click="Login(email,pass)">Log In</button>
-                <a href="#/pass-recover"><strong class="forgotPass">Forgot your password?</strong></a>
-                <!--iv class="hr-text">
-                    <span>Or</span>
+                <button class="col-xs-6 submitLogin btn btn-info btn-lg active" ng-click="Login(email,pass)">Log In</button>
+                <button class="col-xs-6 pull-right registerBtn submitLogin btn btn-info btn-lg active" ng-click="redirect('#/register')">Sign up!</button>
+                <a href="#/pass-recover"><strong class="forgotPass">Reset password?</strong></a>
+                <div class="hr-text">
+                    <span>OR</span>
                 </div>
-                <a class="btn btn-block btn-social btn-facebook"><span class="fa fa-facebook"></span> Sign in with Facebook</a>
-                <a class="btn btn-block btn-social btn-google"><span class="fa fa-google"></span> Sign in with Google</a-->
+                <a class="btn btn-block btn-social btn-facebook" ng-click="redirect('#/app/home')"><span class="fa fa-facebook"></span> Log in with Facebook</a>
+                <a class="btn btn-block btn-social btn-twitter"><span class="fa fa-twitter"></span> Log in with Twitter</a>
             </form>
-            <a href="#/register"><div class="forgotPass" style="width:70%;">Don't have an account? Sign Up!</div></a>
         </div>
     </ion-content>
 </ion-view>
+
