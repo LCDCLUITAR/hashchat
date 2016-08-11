@@ -1,24 +1,10 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['firebase'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, userSession, general) {
     // Redirect function
     $scope.redirect = function(path){
         general.redirect(path);
     }
-    /*=========================================================
-    *** Controller to check for login status and redirect
-    *** if necessary. Status will be stored in factory
-    ==========================================================*/
-    function authDataCallback(authData) {
-        if(authData)
-            console.log("User " + authData.uid + " is logged in with " + authData.provider);
-        else
-            console.log("User is logged out");
-    }    
-    
-    // Callback that fires every time auth state changes
-    var ref = new Firebase("https://hashchat-1bb5c.firebaseio.com");
-    ref.onAuth(authDataCallback); 
     
     // Check if there is a user logged in
     $scope.$watch(function(){ return userSession.getLoggedStatus() }, function (newVal, oldVal){
@@ -90,10 +76,79 @@ angular.module('starter.controllers', [])
     }
 
 })
-.controller('Login', function($scope, $ionicModal, $timeout, userSession, general) {
+.controller('Login', function($scope, $ionicModal, $timeout, userSession, general, $state){
     // Redirect function
     $scope.redirect = function(path){
         general.redirect(path);
+    }   
+    
+    /*
+    --- Facebook Authentication
+    */
+    $scope.facebookLogin = function(){
+        // Facebook Auth
+        var FBProvider = new firebase.auth.FacebookAuthProvider();
+        FBProvider.addScope('public_profile,user_friends,email,user_birthday,user_photos');
+        
+        //firebase.auth().signInWithPopup(FBProvider);
+        
+        firebase.auth().signInWithPopup(FBProvider).then(function(result) {
+            if (result.credential) {
+                // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+                var token = result.credential.accessToken;
+            }
+            // The signed-in user info.
+            var fbUser = result.user;
+            console.log('FBUSER');
+            console.log(fbUser);
+            userSession.setCurrUser(fbUser.providerData[0]);
+            userSession.setLoggedStatus(true);
+            $state.go('app.home');
+        }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+            console.log(errorCode);
+            console.log(errorMessage);
+            console.log(email);
+            console.log(credential);
+        });
+    }
+    /*
+    --- END OF Facebook authentication
+    */
+    
+    $scope.twitterLogin = function(){
+        var provider = new firebase.auth.TwitterAuthProvider();
+        
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+            // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
+            // You can use these server side with your app's credentials to access the Twitter API.
+            var token = result.credential.accessToken;
+            var secret = result.credential.secret;
+            // The signed-in user info.
+            var twitUser = result.user;
+            console.log('TwitterUser');
+            console.log(twitUser);
+            userSession.setCurrUser(twitUser.providerData[0]);
+            userSession.setLoggedStatus(true);
+            $state.go('app.home');
+            // ...
+        }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+        });
     }
     
     console.log('Login');
@@ -116,7 +171,7 @@ angular.module('starter.controllers', [])
             if(logErr == 0){
                 userSession.setLoggedStatus(true);
                 userSession.setCurrUser($scope.fbApp.auth().currentUser.providerData[0]);
-                window.location.replace('#/app/home');
+                $state.go('app.home');
             }
             else{
                 console.log("Error Signing in");

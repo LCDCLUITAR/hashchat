@@ -1,4 +1,4 @@
-angular.module('starter.factory', [])
+angular.module('starter.factory', ['firebase'])
 .factory("general", function(){
     return{
         redirect: function(path){
