@@ -3,6 +3,15 @@ angular.module('starter.factory', ['firebase'])
     return{
         redirect: function(path){
             window.location.replace(path);
+        },
+        getCurrDate: function(){
+            var currentdate = new Date(); 
+            return datetime = currentdate.getDate() + "/"
+                            + (currentdate.getMonth()+1)  + "/" 
+                            + currentdate.getFullYear() + " @ "  
+                            + currentdate.getHours() + ":"  
+                            + currentdate.getMinutes() + ":" 
+                            + currentdate.getSeconds();
         }
     }
 })

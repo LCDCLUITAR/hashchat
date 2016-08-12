@@ -1,6 +1,15 @@
 /*-----------------------------
 --- Default Page
 ------------------------------*/
+input[type=file]:focus, input[type=checkbox]:focus, input[type=radio]:focus {
+    outline: none;
+}
+.scroll-content {
+    background-color: #f0f0f0;
+    width: 100%;
+    height: 100%;
+}
+
 [nav-view-transition="ios"][nav-view-direction="forward"], [nav-view-transition="ios"][nav-view-direction="back"] {
     background-color: #f0f0f0;
 }
@@ -25,15 +34,6 @@ html, body, #wrapper{
     z-index: -100;
     width: 100%;
     height: 100%;
-
-    display: block;
-    background: url('../img/bkgrnd1.jpg');
-    -webkit-filter: blur(1px);
-    -moz-filter: blur(1px);
-    -o-filter: blur(1px);
-    -ms-filter: blur(1px);
-    filter: blur(1px);
-    /*overflow: hidden;*/
 }
 .content{
     position: absolute;
@@ -248,7 +248,8 @@ html, body, #wrapper{
 .bottomBox-chat{
     /*border: 2px solid blue;*/
     position: relative;
-    height: 100%;
+    margin-bottom: 45px;
+    /*height: 100%;*/
 }
 
 .chat-box{
@@ -395,4 +396,28 @@ input[type="text"]:focus,input:active, input[type="password"]:focus,input:active
 
 .bar .buttons span {
     color: aliceblue;
+}
+/*====================
+--- Add-Room Styles
+=====================*/
+#wrapper-addRoom{
+    position: relative;
+    /*height: 44.5em;*/
+    width: 100%;
+}
+
+.checkbox-div{
+    margin-left: -15px;
+}
+
+.checkbox-div input[type="checkbox"]{
+    width: 20% !important;
+    height: 2.5em !important;
+}
+
+.check-text{
+    margin-top: 15px;
+    margin-left: -15px;
+    font-size: 1.6em;
+    width: 80%;
 }

@@ -50,6 +50,14 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
                 }
             }
         })
+        .state('app.addRoom', {
+            url: '/addRoom',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/add-chatroom.html'
+                }
+            }
+        })
         .state('app.chat-room', {
             url: '/chat-room',
             views: {
@@ -59,5 +67,5 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
             }
         });
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/default');
+    $urlRouterProvider.otherwise('/app/home');
 });

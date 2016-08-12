@@ -1,6 +1,6 @@
 angular.module('starter.controllers', ['firebase'])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, userSession, general) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, userSession, general, $state) {
     // Redirect function
     $scope.redirect = function(path){
         general.redirect(path);
@@ -9,7 +9,10 @@ angular.module('starter.controllers', ['firebase'])
     // Check if there is a user logged in
     $scope.$watch(function(){ return userSession.getLoggedStatus() }, function (newVal, oldVal){
         if (typeof newVal !== 'undefined')
-            $scope.logged = userSession.getLoggedStatus();      
+            $scope.logged = userSession.getLoggedStatus(); 
+        console.log($scope.logged);
+        if(!$scope.logged)
+            $state.go('login');
     });
     
     // Function to log user out and clear it data
@@ -47,7 +50,7 @@ angular.module('starter.controllers', ['firebase'])
     }
     
     $scope.fbApp = fbApp;
-    $scope.fbApp.database().ref('room').on('value', function(snapshot){
+    $scope.fbApp.database().ref('chat-rooms').on('value', function(snapshot){
         $scope.rooms = snapshot.val();
         console.log($scope.rooms);
     });
@@ -55,7 +58,44 @@ angular.module('starter.controllers', ['firebase'])
     $scope.user = userSession.getCurrUser();
     console.log($scope.user);
 
-
+    
+    /*
+    --- Add new chat room function
+    */
+    
+    function updateChatRoom(username, roomName, hashtags, description, pass, photoURL) {
+        // A post entry.
+        var postData = {
+            host: username,
+            roomName: roomName,
+            keywords: hashtags,
+            description: description,
+            createdOn: general.getCurrDate(),
+            password: pass,
+            photo: 'https://cdn.theatlantic.com/assets/media/img/photo/2015/11/images-from-the-2016-sony-world-pho/s01_130921474920553591/main_900.jpg?1448476701'    
+        };
+    
+        // Get a key for a new Post.
+        var newPostKey = fbDb.ref().child('chat-rooms').push().key;
+    
+        // Write the new post's data simultaneously in the posts list and the user's post list.
+        var updates = {};
+        updates['/chat-rooms/' + newPostKey] = postData;
+        /*updates['/user/' + uid + '/' + newPostKey] = postData;*/
+    
+        return firebase.database().ref().update(updates);
+    }
+        
+    $scope.addRoom = function(roomInput){
+        var host = userSession.getCurrUser().displayName;
+        var result = updateChatRoom(host, roomInput.name, roomInput.keywords, roomInput.description, roomInput.pass);
+        console.log(roomInput.photo);
+        console.log(result);
+    }
+    
+    /*
+    --- END OF Add new chat room function
+    */
 })
 .controller('Register', function($scope, $ionicModal, $timeout) {
     console.log('Register');

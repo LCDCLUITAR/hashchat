@@ -1,0 +1,28 @@
+<ion-view>
+    <ion-content>
+        <div class="backgroundImg"></div>
+        <div id="wrapper-addRoom">
+            <form class="login-form container">
+                <div class="form-group">
+                    <input type="text" class="input-box form-control" placeholder="Enter Room Name" ng-model="newRoom.name">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="input-box form-control" placeholder="Enter all hashtags related to this chat room" ng-model="newRoom.keywords">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="input-box form-control" placeholder="Description (150 characters)" ng-model="newRoom.description">
+                </div>
+                <div class="form-group checkbox-div">
+                    <input class="col-xs-4" type="checkbox" ng-model="check"><span class=" col-xs-8 check-text">Add password?</span>
+                </div>
+                <div class="form-group" ng-show="check">
+                    <input type="password" class="input-box form-control" placeholder="Enter a password" ng-model="newRoom.pass">
+                </div>
+                <div class="form-group">
+                    <input type="file" class="inputimg" accept="image/*" ng-model="newRoom.photo" style="border-bottom:none;">
+                </div>
+                <button class="col-xs-12 btn btn-info btn-lg active" ng-click="addRoom(newRoom)">Create Room</button>
+            </form>
+        </div>
+	</ion-content>
+</ion-view>
